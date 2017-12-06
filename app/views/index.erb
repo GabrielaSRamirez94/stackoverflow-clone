@@ -1,16 +1,50 @@
-<% if !@session %>
-  <%= erb :_login_forms %>
+<div class="container">
+
+
+
+     <%= erb :_nav %>
+
+
+<div id="title" class="center text-center">
+  <h1>RECENTLY ASKED QUESTIONS</h1>
+</div>
+
+
+<% @questions.in_groups_of(4, false).each do |group| %>
+<div class="row text-center">
+    <% group.each_with_index do |question, index| %>
+        <div id="single-q" class='col' data-category="<%= question.title %>">
+          <p><a href="/questions/<%="#{question.id}"%>"><%= question.title %></a></p>
+        </div>
+      <% end %>
+    </div>
 <% end %>
 
-<div class="container">
-  <% if @session %>
-    <%= erb :_nav %>
-  <% end %>
-  <h1>Recent questions...<br>HARRY POTTER THEMED!</h1>
-    <ul>
-    <% @questions.each do |question| %>
-    <li class = "question_list_item" >Votes: <%= question.votes%> | Answer: <%= question.answers.count %> | <a href="/questions/<%="#{question.id}"%>"><%= question.title %></a> <%= question.author.username %>
-    </li>
+
+
+
+
+
+
+
+<!-- <div id="index-all-q" class="row text-center">
+  <div class="col center">
+    <ul style="list-style: none;">
+      <% @questions.each do |question| %>
+      <div id="single-q">
+        <li class = "question_list_item" >Votes: <%= question.votes%> | Answer: <%= question.answers.count %> | <a href="/questions/<%="#{question.id}"%>"><%= question.title %></a> <%= question.author.username %>
+        </li> </div>
       <%end%>
   </ul>
+</div>
+</div> -->
+
+
+
+
+
+
+
+
+
 </div>

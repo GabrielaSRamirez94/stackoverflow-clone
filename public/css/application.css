@@ -1,63 +1,59 @@
+/*font-family: 'Pathway Gothic One', sans-serif;
+font-family: 'Raleway', sans-serif;*/
+
+* {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #3E413E;
+}
+
+h1 {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 55px;
+}
+
+#title {
+  width: 65%;
+  margin: 0 auto;
+}
+
 .container {
   margin: 20px auto;
   width: 700px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: none;
 }
 
-* {
-  font-family: Arial, Verdana, sans-serif;
-  color: #665544;
-  text-align: center;}
+div {
+  /*border: 1px solid red;*/
+}
+
+a {
+  /*color: black;*/
+  color: #3E413E;
+  text-decoration: none;
+}
+
 
 body {
-  width: 90%;
-  margin: 0 auto;}
-
-.nav_li {
-  display: inline;
-  padding: 0.5em;}
-
-#nav {
-  background-color: #efefef;
-  margin: 0 auto;
-}
-#feature, .article {
-  height: 10em;
-  margin-bottom: 1em;
-  background-color: #efefef;}
-li {
-  list-style-type: none;
-}
-.question_list_item {
-  line-height: 150%;
+ background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
 }
 
-.vote-button {
-  background-color: transparent;
-  border: none;
-  padding-top: 1px;
-  color: #8C8C8C;
-  vertical-align: sub;
-  padding: 1px 0px 0px 0px;
+#single-q {
+  display: inline-block;
+  background-color: #f5efef;
+  border-radius: 5px 30px 5px;
+  height: 110px;
+  width: 200px;
+  padding: 1%;
+}
+
+#login-b {
+  background-color: #3E413E;
 }
 
 
-.answer {
-  list-style: none;
-  padding: 0em;
-  padding-bottom: 1em;
-  border-bottom: 1px solid #C8C8C8;
+#nav-bar {
+
 }
-
-.answer_comment {
-  color: grey;
-  font-size: 12px;
-}
-
-
-.question_comment {
-  color: grey;
-  font-size: 12px;
-}
-

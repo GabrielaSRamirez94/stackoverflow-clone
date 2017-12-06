@@ -18,6 +18,9 @@ html {
 
 body {
   margin: 0;
+  /*background-color: yellow;*/
+
+
 }
 
 /* HTML5 display definitions
@@ -426,7 +429,4 @@ th {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
 }
-
-
