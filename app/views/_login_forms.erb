@@ -1,36 +1,50 @@
-<% if @error %>
-    <h1 style="color:red"><%= @error %></h1>
-  <% end %>
+ <% if @error %>
+     <p style="color:red"><%= @error %></p>
+   <% end %>
 
-  <% if @logout %>
-    <h1 style="color:purple"><%= @logout %></h1>
-  <% end %>
+   <% if @logout %>
+     <p style="color:purple"><%= @logout %></p>
+   <% end %>
 
-  <% if @unauthorized %>
-    <h1 style="color:purple"><%= @unauthorized %></h1>
-  <% end %>
+   <% if @unauthorized %>
+     <p style="color:purple"><%= @unauthorized %></p>
+   <% end %>
 
-  <form action="/users/register" method="post">
-      <h1>Please Register Here</h1>
+ <div id="register" class="row">
+   <div class="col center">
+     <form action="/users/register" method="post">
+         <p>Register:</p>
+   </div>
+   <div class="col center">
+         <!-- <label><b>User Name</b></label> -->
+         <input type="text" placeholder="Enter User Name" name="username">
+   </div>
+   <div class="col center">
+         <!-- <label><b>Password</b></label> -->
+         <input type="password" placeholder="Enter Password" name="password">
+   </div>
+   <div class="col center">
+         <button id="login-b" type="submit">Sign Up</button>
+     </form>
+   </div>
+ </div>
 
-      <label><b>User Name</b></label>
-      <input type="text" placeholder="Enter User Name" name="username">
 
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password">
-
-      <button type="submit">Sign Up</button>
-  </form>
-<br><br>
-  <form action="/users/profile" method="post">
-      <h1>Or login here</h1>
-      <label><b>User Name</b></label>
-      <input type="text" placeholder="Enter User Name" name="username">
-
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password">
-
-      <button type="submit">Login</button>
-
-  </form>
-  <br><br>
+   <div id="login" class="row">
+     <div class="col center">
+         <form action="/users/profile" method="post">
+           <p>Login:</p>
+     </div>
+     <div class="col center">
+       <!-- <label><b>User Name</b></label> -->
+       <input type="text" placeholder="Enter User Name" name="username">
+     </div>
+     <div class="col center">
+       <!-- <label><b>Password</b></label> -->
+       <input type="password" placeholder="Enter Password" name="password">
+     </div>
+     <div class="col center">
+           <button id="login-b" type="submit">Login</button>
+       </form>
+     </div>
+   </div>
