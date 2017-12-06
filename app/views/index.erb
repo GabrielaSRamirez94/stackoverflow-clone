@@ -10,18 +10,16 @@
 </div> <!--title div -->
 
 
-<% @questions.in_groups_of(4, false).each do |group| %>
+<% @questions.each do |question| %>
 <div class="row text-center">
-    <% group.each_with_index do |question, index| %>
+
         <div id="single-q" class='col' data-category="<%= question.title %>">
-            <p><a href="/questions/<%="#{question.id}"%>"><%= question.title %></a></p>
-            <!-- <div class="overlay">
-              <p>Votes: <%= question.votes%> <br> Answer: <%= question.answers.count %> </p>
-            </div> overlay div -->
+            <div id="text"><a href="/questions/<%="#{question.id}"%>"><%= question.title %></a></div>
+            <div id="show">Votes: <%= question.votes%> | Answer: <%= question.answers.count %></div>
         </div> <!--single-q div -->
+  </div> <!--row text center div -->
       <% end %>
-<% end %>
-</div> <!--row text center div -->
+
 
 
 

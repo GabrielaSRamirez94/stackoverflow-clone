@@ -26,14 +26,15 @@ h1 {
   border: none;
 }
 
-/*div {
-  border: 1px solid red;
-}*/
+div {
+  /*border: 1px solid red;*/
+}
 
 a {
   /*color: black;*/
   color: #3E413E;
   text-decoration: none;
+  font-weight: bolder;
 }
 
 
@@ -42,14 +43,21 @@ body {
 }
 
 #single-q {
-  /*display: inline-block;*/
+  position: relative;
   background-color: #f5efef;
   border-radius: 5px 30px 5px;
-  height: 110px;
-  width: 200px;
+  height: 50px;
+  max-width: 500px;
   padding: 1%;
+  margin-left: 13%;
 }
 
-#single-q:hover {
-  background-color: #3E413E;
+#single-q:hover  #show {
+   opacity: 1;
+}
+
+#show {
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  font-size: 14px;
 }
