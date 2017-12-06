@@ -15,9 +15,9 @@
     <% group.each_with_index do |question, index| %>
         <div id="single-q" class='col' data-category="<%= question.title %>">
             <p><a href="/questions/<%="#{question.id}"%>"><%= question.title %></a></p>
-            <div class="overlay">
+            <!-- <div class="overlay">
               <p>Votes: <%= question.votes%> <br> Answer: <%= question.answers.count %> </p>
-            </div> <!--overlay div -->
+            </div> overlay div -->
         </div> <!--single-q div -->
       <% end %>
 <% end %>

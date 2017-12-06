@@ -26,9 +26,9 @@ h1 {
   border: none;
 }
 
-div {
+/*div {
   border: 1px solid red;
-}
+}*/
 
 a {
   /*color: black;*/
@@ -52,17 +52,4 @@ body {
 
 #single-q:hover {
   background-color: #3E413E;
-}
-
-#single-q:hover .overlay {
-  opacity: 1;
-}
-
-.overlay {
-  border-radius: 5px 30px 5px;
-  height: 110px;
-  width: 200px;
-  padding: 1%;
-  transition: .5s ease;
-  background-color: #008CBA;
 }
