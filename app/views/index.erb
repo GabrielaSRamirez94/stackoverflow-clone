@@ -7,7 +7,7 @@
 
 <div id="title" class="center text-center">
   <h1>RECENTLY ASKED QUESTIONS</h1>
-</div>
+</div> <!--title div -->
 
 
 <% @questions.in_groups_of(4, false).each do |group| %>
@@ -17,12 +17,11 @@
             <p><a href="/questions/<%="#{question.id}"%>"><%= question.title %></a></p>
             <div class="overlay">
               <p>Votes: <%= question.votes%> <br> Answer: <%= question.answers.count %> </p>
-            </div>
-        </div>
+            </div> <!--overlay div -->
+        </div> <!--single-q div -->
       <% end %>
-    </div>
 <% end %>
-
+</div> <!--row text center div -->
 
 
 
@@ -47,7 +46,4 @@
 
 
 
-
-
-
-</div>
+</div> <!--container div -->

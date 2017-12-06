@@ -1,6 +1,7 @@
 /*font-family: 'Pathway Gothic One', sans-serif;
 font-family: 'Raleway', sans-serif;*/
 
+
 * {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -26,7 +27,7 @@ h1 {
 }
 
 div {
-  /*border: 1px solid red;*/
+  border: 1px solid red;
 }
 
 a {
@@ -49,11 +50,11 @@ body {
   padding: 1%;
 }
 
-/*#single-q:hover {
+#single-q:hover {
   background-color: #3E413E;
-}*/
+}
 
-/*#single-q:hover .overlay {
+#single-q:hover .overlay {
   opacity: 1;
 }
 
@@ -64,10 +65,4 @@ body {
   padding: 1%;
   transition: .5s ease;
   background-color: #008CBA;
-}*/
-
-
-
-#nav-bar {
-
 }
