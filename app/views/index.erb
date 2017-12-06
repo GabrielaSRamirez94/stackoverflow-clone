@@ -7,18 +7,18 @@
 
 <div id="title" class="center text-center">
   <h1>RECENTLY ASKED QUESTIONS</h1>
-</div>
+</div> <!--title div -->
 
 
-<% @questions.in_groups_of(4, false).each do |group| %>
+<% @questions.each do |question| %>
 <div class="row text-center">
-    <% group.each_with_index do |question, index| %>
+
         <div id="single-q" class='col' data-category="<%= question.title %>">
-          <p><a href="/questions/<%="#{question.id}"%>"><%= question.title %></a></p>
-        </div>
+            <div id="text"><a href="/questions/<%="#{question.id}"%>"><%= question.title %></a></div>
+            <div id="show">Votes: <%= question.votes%> | Answer: <%= question.answers.count %></div>
+        </div> <!--single-q div -->
+  </div> <!--row text center div -->
       <% end %>
-    </div>
-<% end %>
 
 
 
@@ -44,7 +44,4 @@
 
 
 
-
-
-
-</div>
+</div> <!--container div -->
