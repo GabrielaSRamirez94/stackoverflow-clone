@@ -41,7 +41,7 @@ body {
 }
 
 #single-q {
-  display: inline-block;
+  /*display: inline-block;*/
   background-color: #f5efef;
   border-radius: 5px 30px 5px;
   height: 110px;
@@ -49,9 +49,23 @@ body {
   padding: 1%;
 }
 
-#login-b {
+/*#single-q:hover {
   background-color: #3E413E;
+}*/
+
+/*#single-q:hover .overlay {
+  opacity: 1;
 }
+
+.overlay {
+  border-radius: 5px 30px 5px;
+  height: 110px;
+  width: 200px;
+  padding: 1%;
+  transition: .5s ease;
+  background-color: #008CBA;
+}*/
+
 
 
 #nav-bar {
