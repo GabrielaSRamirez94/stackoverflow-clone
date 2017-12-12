@@ -1,16 +1,8 @@
-# before '/users/profile' do
-  # redirect 'users/login?ua=1' if !session[:username]
-#   if !session[:username]
-#     redirect 'users/login?ua=1'
-#   else
-#     erb :'users/profile'
-#   end
-# end
 
 get '/users/login' do
   @error = "Invalid Email Or Password" if params['e']
   @logout = "You Have Been Logged Out" if params['lo']
-  @unauthorized = "You need to be logged in to view your profile idiot" if params['ua']
+  @unauthorized = "You Must Be Logged In To View Your Profile" if params['ua']
   erb :'users/login'
 end
 
@@ -47,5 +39,3 @@ get '/users/logout' do
   session.delete(:username)
   redirect to '/users/login?lo=1'
 end
-
-

@@ -1,6 +1,4 @@
-<% if !@session %>
-  <%= erb :_login_forms %>
-<% end %>
+
 
 <div class = 'container'>
 
@@ -8,60 +6,95 @@
 
 <div id="question">
 
+  <div id="question-heading" class="row center">
+    <div id="vote">
+      <button id="all-button" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button q-upvote-button" data-question-id="<%= @question.id%>"></button>
+    </div>
 
-  <button name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button q-upvote-button" data-question-id="<%= @question.id%>"></button>
-   <h1><%= @question.title %></h1>
+    <div id="question-title" class='text-center'>
+       <h1><%= @question.title %></h1>
+       <h3 class="text-center"><strong>Question Votes: <span id='ques-vote-count'><%= @question.votes %></span></strong></h3>
+    </div>
 
-  <button name="submit_param" value="submit_value" class="fa fa-sort-asc vote-button q-downvote-button" data-question-id="<%= @question.id%>"></button>
-  <h3><strong>Question votes: <span id='ques-vote-count'><%= @question.votes %></span></strong></h3>
-<p><%= @question.body %></p><br>
+    <div id="vote">
+      <button id="all-button" name="submit_param" value="submit_value" class="fa fa-sort-asc vote-button q-downvote-button" data-question-id="<%= @question.id%>"></button>
+    </div>
+  </div>
 
 
-<a class = "question_comment_button" href="/questions/<%=@question.id%>" >add a comment</a>
+
+<div id="question-body" class="text-center">
+  <p><%= @question.body %></p>
+</div>
+
+<div id="add-comment" class="text-center">
+<a class = "question_comment_button" href="/questions/<%=@question.id%>" >add a comment to this question</a>
   <%= erb :"_question_comments", layout: false, locals: { question: @question } %>
+</div>
 
-  <div>
+
     <% (@question_comments.where(question_id: @question.id)).each do |question_comment| %>
       <p class = "question_comment"><span class = "question_comment_body"><%=question_comment.body%></span> by: <span class="author"><%= question_comment.commentor.username %></span></p>
     <% end %>
-  </div>
   <br>
   </div>
 
-  <h4><%=@answers.count%> ANSWERS:</h4>
 
-  <ul class = "answer_list">
-  <% @answers.each do |answer| %>
-    <li class="answer">
-            <h3><strong>Answer votes: <span id='answ-vote-count'><%= answer.votes %></span></strong></h3>
-      <button name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button a-upvote-button" data-question-id="<%= @question.id%>" data-answer-id="<%=answer.id%>"></button>
-      <p><%=answer.body%></p>
-      <button name="submit_param" value="submit_value" class="fa fa-sort-asc vote-button a-downvote-button" data-question-id="<%= @question.id%>" data-answer-id="<%=answer.id%>"></button>
-      <br><br>
-      <span class="author">author: <%= User.find(answer.solver_id).username %></span>
-      <br><br>
+<!-- answer section -->
 
-      <a class = "answer_comment_button" href="/questions/<%=@question.id%>" >add a comment</a>
+
+
+
+  <div id="answer-count" class="text-center">
+      <h4><%=@answers.count%> Answers Given:</h4>
+  </div>
+
+<div id="answer-section" class="text-center">
+
+  <div id="answer-list" class="row center">
+    <% @answers.each do |answer| %>
+
+        <div id="answer-vote" class="center">
+          <button id="all-button" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button a-upvote-button" data-question-id="<%= @question.id%>" data-answer-id="<%=answer.id%>"></button>
+        </div>
+
+        <div id="answer-info" class="text-center">
+              <p><%=answer.body%></p>
+              <h3><strong>Answer votes: <span id='answ-vote-count'><%= answer.votes %></span></strong></h3>
+                <span class="author">author: <%= User.find(answer.solver_id).username %></span>
+        </div>
+
+        <div id="answer-vote" class="vertical-align">
+          <button id="all-button" name="submit_param" value="submit_value" class="fa fa-sort-asc vote-button a-downvote-button" data-question-id="<%= @question.id%>" data-answer-id="<%=answer.id%>"></button>
+        </div>
+      </div>
+
+    <div id="answer-comment">
+      <a class="answer_comment_button" href="/questions/<%=@question.id%>">add a comment to this answer</a>
       <%= erb :"_answer_comments", layout: false, locals: { question: @question, answer: answer } %>
+    </div>
+
+
+
 
       <div>
       <% (@answer_comments.where(answer_id: answer.id)).each do |answer_comment| %>
       <p class = "answer_comment"><span class = "answer_comment_body"><%=answer_comment.body%></span> by: <span class="author"><%= answer_comment.commentor.username %></span></p>
       <% end %>
-      </div>
-
-    </li>
     <%end%>
-  </ul>
-  <br><br>
 
-  <p> Your Answer </p>
-  <form id = "answer_form" method="post" action="/questions/<%=@question.id%>">
-    <textarea cols="70" rows="8" name="body" type="text"></textarea><br><br>
-    <input type="submit" value="submit" class="button">
-  </form>
+    </div>
 
 
-  <!--make the below form a partial-->
+
+
+    <div id="add-answer">
+      <p> Your Answer </p>
+      <form id = "answer_form" method="post" action="/questions/<%=@question.id%>">
+          <textarea id="text-area" name="body" type="text"></textarea><br><br>
+        <input type="submit" value="submit" class="button">
+      </form>
+    </div>
+
 
 </div>
