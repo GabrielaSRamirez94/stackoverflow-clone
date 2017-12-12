@@ -1,4 +1,7 @@
 <div class="container">
+  <% if !@session %>
+    <%= erb :_login_forms %>
+  <% end %>
 
 
 
@@ -22,22 +25,6 @@
 
 
 
-
-
-
-
-
-<!-- <div id="index-all-q" class="row text-center">
-  <div class="col center">
-    <ul style="list-style: none;">
-      <% @questions.each do |question| %>
-      <div id="single-q">
-        <li class = "question_list_item" >Votes: <%= question.votes%> | Answer: <%= question.answers.count %> | <a href="/questions/<%="#{question.id}"%>"><%= question.title %></a> <%= question.author.username %>
-        </li> </div>
-      <%end%>
-  </ul>
-</div>
-</div> -->
 
 
 

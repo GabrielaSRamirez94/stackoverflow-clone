@@ -1,6 +1,10 @@
 /*font-family: 'Pathway Gothic One', sans-serif;
 font-family: 'Raleway', sans-serif;*/
 
+div {
+  /*border: 1px solid red;*/
+}
+
 
 * {
   font-family: 'Raleway', sans-serif;
@@ -12,11 +16,18 @@ font-family: 'Raleway', sans-serif;*/
 h1 {
   font-family: 'Pathway Gothic One', sans-serif;
   font-size: 55px;
+  margin: 0px;
 }
+
+h3 {
+  margin: 0px;
+}
+
 
 #title {
   width: 65%;
   margin: 0 auto;
+  padding-bottom: 3%;
 }
 
 .container {
@@ -26,12 +37,8 @@ h1 {
   border: none;
 }
 
-div {
-  /*border: 1px solid red;*/
-}
 
 a {
-  /*color: black;*/
   color: #3E413E;
   text-decoration: none;
   font-weight: bolder;
@@ -39,16 +46,15 @@ a {
 
 
 body {
- background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+ background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
 #single-q {
   position: relative;
-  background-color: #f5efef;
-  border-radius: 5px 30px 5px;
+  border-top: 0.5px solid #C4C4C7;
   height: 50px;
   max-width: 500px;
-  padding: 1%;
+  padding-top: 3%;
   margin-left: 13%;
 }
 
@@ -60,4 +66,68 @@ body {
   transition: all 0.5s ease-in-out;
   opacity: 0;
   font-size: 14px;
+}
+
+
+#text-area {
+  resize: none;
+  max-width: 500px;
+  max-height: 250px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+#all-button {
+  background-color: #C2CACA;
+  /*border-radius: 85%;*/
+}
+
+#question {
+  border-bottom: 0.5px solid #C4C4C7;
+}
+
+
+#question-title {
+  display: inline-block;
+  padding: 2%;
+}
+
+#vote {
+  display: inline-block;
+  margin: 2%;
+}
+
+#question-vote-count {
+  display: inline-block;
+  padding-top: 1%;
+}
+
+
+
+/*answer section*/
+
+#answer-comment {
+  border-bottom: 0.5px solid #C4C4C7;
+  padding-bottom: 2%;
+}
+
+#answer-count {
+  padding-top: 2%;
+
+}
+
+h4 {
+  margin: 1%;
+}
+
+#answer-vote {
+  display: inline-block;
+  margin: 2%;
+}
+
+#answer-info {
+  display: inline-block;
+  width: 400px;
+  padding-bottom: 3%;
 }
